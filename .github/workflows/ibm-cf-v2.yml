@@ -64,7 +64,7 @@ jobs:
     - name: Generate V2Ray Config File (VMess)
       if: ${{ env.V2_WS_PATH_VMESS }}
       run: |
-        base64 << P3TERX > config
+        base64 << GREYREN > config
         {
           "log": {
             "access": "none",
@@ -96,12 +96,12 @@ jobs:
             }
           ]
         }
-        P3TERX
+        GREYREN
 
     - name: Generate V2Ray Config File (VLESS)
       if: ${{ env.V2_WS_PATH_VLESS }}
       run: |
-        base64 << P3TERX > config
+        base64 << GREYREN > config
         {
           "log": {
             "access": "none",
@@ -133,7 +133,7 @@ jobs:
             }
           ]
         }
-        P3TERX
+        GREYREN
 
     - name: Generate Manifest File
       run: |
@@ -145,7 +145,7 @@ jobs:
           command: base64 -d config > config.json; ./${IBM_CF_APP_NAME} -config=config.json
           buildpacks:
           - binary_buildpack
-        greyren
+        GREYREN
 
     - name: Deploy Cloud Foundry App
       run: cf push
