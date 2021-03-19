@@ -16,8 +16,9 @@ env:
 on:
   workflow_dispatch:
   repository_dispatch:
-#  schedule:
-#    - cron: 0 21 * * 3
+schedule:
+#    UTC+0时区，每月1、8、15、22、29号的20:15(+7)
+    - cron: 23 03 1/7 * *
 
 jobs:
   deploy:
